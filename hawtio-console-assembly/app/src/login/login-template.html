@@ -1,12 +1,11 @@
 <span id="badge">
-  <img ng-src="{{$ctrl.branding.companyLogoUrl}}" alt="">
+  <img ng-src="{{$ctrl.branding.companyLogoUrl}}" alt="" class="login-company-logo">
 </span>
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
       <div id="brand">
-        <img ng-src="{{$ctrl.branding.appLogoUrl}}" alt="{{$ctrl.branding.appName}}">
-        <span>{{$ctrl.branding.appType}}</span>
+        <img ng-src="{{$ctrl.branding.appLogoUrl}}" alt="{{$ctrl.branding.appName}}" class="login-app-logo">
       </div><!--/#brand-->
       <div class="alert alert-danger" ng-if="$ctrl.wrongPassword">
         <span class="pficon pficon-error-circle-o"></span>

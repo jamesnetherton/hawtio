@@ -150,9 +150,10 @@ gulp.task('install-dependencies', function (cb) {
 });
 
 gulp.task('copy-images', function () {
+  var patterns = [];
+  // Add Hawtio dependencies images
   var hawtioDependencies = config.app + 'node_modules/@hawtio';
   var dirs = fs.readdirSync(hawtioDependencies);
-  var patterns = [];
   dirs.forEach(function (dir) {
     var path = hawtioDependencies + '/' + dir + '/dist/img';
     try {
@@ -165,8 +166,11 @@ gulp.task('copy-images', function () {
       // ignore, file does not exist
     }
   });
-  // Add PatternFly images package in dist
+  // Add PatternFly images
   patterns.push(config.app + 'node_modules/patternfly/dist/img/**/*');
+  // Add Hawtio Console Assembly images
+  patterns.push(config.app + 'src/img/**/*');
+  // Copy images
   return gulp.src(patterns)
     .pipe(plugins.debug({ title: 'image copy' }))
     .pipe(gulp.dest(config.distImg));
