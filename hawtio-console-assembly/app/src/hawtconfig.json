@@ -12,6 +12,8 @@
     "imgSrc": ""
   },  
   "disabledRoutes": [
-    "/diagnostics/jfr"
+    "/diagnostics/jfr",
+    "/diagnostics/heap",
+    "/diagnostics/flags"
   ]
 }
