@@ -10,12 +10,10 @@
   <artifactId>hawtio-war</artifactId>
   <packaging>war</packaging>
   <name>${project.artifactId}</name>
-  <description>hawtio :: Web Console</description>
+  <description>Fuse Console</description>
 
   <properties>
     <finalName>hawtio</finalName>
-    <hawtio-console-url>https://github.com/fabric8io/fabric8-console/archive/</hawtio-console-url>
-    <destDir>target/hawtio-console</destDir>
   </properties>
 
   <dependencies>
