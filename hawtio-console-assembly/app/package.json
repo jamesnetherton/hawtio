@@ -2,14 +2,13 @@
   "name": "@hawtio/console-assembly",
   "version": "2.0.0",
   "dependencies": {
-    "@hawtio/integration": "~3.2.0",
-    "@hawtio/log": "~3.2.0",
-    "@hawtio/oauth": "~3.1.0",
+    "@hawtio/integration": "~3.3.0",
+    "@hawtio/log": "~3.3.0",
+    "@hawtio/oauth": "~3.3.0",
     "keycloak-js": "3.4.3"
   },
   "flat": true,
   "resolutions": {
-    "@hawtio/core": "3.2.26",
     "@hawtio/core-dts": "3.1.0",
     "@types/jasmine": "2.8.6",
     "@types/jqueryui": "1.12.2",
