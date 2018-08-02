@@ -9,8 +9,8 @@
     "@types/jquery" "~2.0.46"
 
 "@hawtio/core@^3.3.0", "@hawtio/core@~3.3.0":
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@hawtio/core/-/core-3.3.1.tgz#6474fcf6b64a6e8f413d0dc1ad0b750827176e23"
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@hawtio/core/-/core-3.3.2.tgz#84fd7a19a806ba49eb0e2d658b438591d3de04a3"
   dependencies:
     "@hawtio/core-dts" "3.0.18"
     "@types/angular" "~1.6.0"
@@ -40,8 +40,8 @@
     "@hawtio/ui" "~3.3.0"
 
 "@hawtio/integration@~3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@hawtio/integration/-/integration-3.3.0.tgz#29c6c91353ac218d622d8899d8bad0cf714a9828"
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@hawtio/integration/-/integration-3.3.3.tgz#e01d8c33f7eae32068e3668fc6156c5dde3f3060"
   dependencies:
     "@hawtio/core-dts" "3.1.0"
     "@hawtio/jmx" "~3.3.0"
@@ -52,8 +52,8 @@
     ng-infinite-scroll "1.3.0"
 
 "@hawtio/jmx@~3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@hawtio/jmx/-/jmx-3.3.0.tgz#3d93a0bc280ee601a2d7d9a53e808ff373f19afc"
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/@hawtio/jmx/-/jmx-3.3.2.tgz#dfb83d18ebf479a0b26cb0163af1393962c12414"
   dependencies:
     "@hawtio/core" "~3.3.0"
     "@hawtio/forms" "~3.3.0"
@@ -63,8 +63,8 @@
     patternfly-bootstrap-treeview "2.1.5"
 
 "@hawtio/log@~3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@hawtio/log/-/log-3.3.0.tgz#6224761c7e3ff463f09986dfcf107d321a58e847"
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@hawtio/log/-/log-3.3.1.tgz#e7275410444536fe62390a902e751332eebf8460"
   dependencies:
     "@hawtio/jmx" "~3.3.0"
 
@@ -76,8 +76,8 @@
     ng-idle "^1.3.2"
 
 "@hawtio/ui@~3.3.0":
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/@hawtio/ui/-/ui-3.3.0.tgz#5de27626a1276a91b2a876e0f862952570a46114"
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@hawtio/ui/-/ui-3.3.1.tgz#d84a0badec04014b5c3cbb523ee467a0847636d3"
   dependencies:
     "@hawtio/core" "^3.3.0"
     "@hawtio/core-dts" "^3.0.0"
@@ -104,8 +104,8 @@
     "@types/angular" "*"
 
 "@types/angular-ui-bootstrap@~0.13.46":
-  version "0.13.46"
-  resolved "https://registry.yarnpkg.com/@types/angular-ui-bootstrap/-/angular-ui-bootstrap-0.13.46.tgz#67b2bc2801cdaec515567840c9d82cc649c34656"
+  version "0.13.47"
+  resolved "https://registry.yarnpkg.com/@types/angular-ui-bootstrap/-/angular-ui-bootstrap-0.13.47.tgz#e9fd4baf09dd98ff2b868ed00474310b2a66fa37"
   dependencies:
     "@types/angular" "*"
 
@@ -194,8 +194,8 @@
     "@types/geojson" "*"
 
 "@types/d3-hierarchy@*":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@types/d3-hierarchy/-/d3-hierarchy-1.1.2.tgz#63a4e433f321ffc4dbd9aa05ff95962072b51993"
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@types/d3-hierarchy/-/d3-hierarchy-1.1.3.tgz#c5364aac0ff4491fc78f73b7c0d546b57b561230"
 
 "@types/d3-interpolate@*":
   version "1.2.0"
@@ -358,8 +358,8 @@ angular-drag-and-drop-lists@2.0.0:
   resolved "https://registry.yarnpkg.com/angular-drag-and-drop-lists/-/angular-drag-and-drop-lists-2.0.0.tgz#a01d44b94cf233c9c2d45a31842cb35a9d0882ca"
 
 angular-patternfly@^4.0.0:
-  version "4.18.3"
-  resolved "https://registry.yarnpkg.com/angular-patternfly/-/angular-patternfly-4.18.3.tgz#9b070203df7a066f0958d7c922a543e776ff789e"
+  version "4.18.4"
+  resolved "https://registry.yarnpkg.com/angular-patternfly/-/angular-patternfly-4.18.4.tgz#91c33ac364bafb09923d307eaf23adecacc0bf8f"
   dependencies:
     angular "1.5.*"
     angular-animate "1.5.*"
@@ -678,8 +678,8 @@ patternfly-bootstrap-treeview@2.1.5, patternfly-bootstrap-treeview@~2.1.0:
     jquery ">= 2.1.x"
 
 patternfly@^3.37.1:
-  version "3.52.1"
-  resolved "https://registry.yarnpkg.com/patternfly/-/patternfly-3.52.1.tgz#0c6f067ec987f4f16b93acb54e8f7de02300eead"
+  version "3.54.1"
+  resolved "https://registry.yarnpkg.com/patternfly/-/patternfly-3.54.1.tgz#a0f8b52076aa405486e77ecb504460b1ff35fe92"
   dependencies:
     bootstrap "~3.3.7"
     font-awesome "^4.7.0"
