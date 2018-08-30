@@ -12,6 +12,7 @@
     "imgSrc": ""
   },  
   "disabledRoutes": [
+    "/camel/source",
     "/diagnostics/jfr",
     "/diagnostics/heap",
     "/diagnostics/flags"
