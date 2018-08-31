@@ -9,15 +9,15 @@
     "@types/jquery" "~2.0.46"
 
 "@hawtio/core@^4.0.0":
-  version "4.0.9"
-  resolved "https://registry.yarnpkg.com/@hawtio/core/-/core-4.0.9.tgz#ed97736c7c6720d9ded7968e2d8e856b73bd8f4a"
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/@hawtio/core/-/core-4.0.10.tgz#69d69939876f69322a95fbc9bfe57bb6aef2d4d2"
   dependencies:
     "@hawtio/core-dts" "3.0.18"
     "@types/angular" "*"
     "@types/angular-route" "*"
     "@types/jasmine" "2.8.2"
     "@types/jquery" "~2.0.0"
-    "@types/lodash" "4.14.91"
+    "@types/lodash" "^4.0.0"
     "@types/marked" "0.3.0"
     "@types/urijs" "1.15.34"
     angular "~1.7.0"
@@ -28,7 +28,7 @@
     gulp-rename "~1.2.3"
     jquery "2.2.4"
     js-logger "1.4.1"
-    lodash "4.17.4"
+    lodash "~4.17.0"
     marked "0.3.9"
     urijs "1.19.0"
 
@@ -39,20 +39,20 @@
     "@hawtio/ui" "^4.0.0"
 
 "@hawtio/integration@~4.0.0":
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/@hawtio/integration/-/integration-4.0.5.tgz#5f1d7966630e4e31c87f304e50b0de845a13e89e"
+  version "4.0.6"
+  resolved "https://registry.yarnpkg.com/@hawtio/integration/-/integration-4.0.6.tgz#2b670dd2c6a15ffefea3ff839788663ac33b3138"
   dependencies:
     "@hawtio/core-dts" "3.1.0"
     "@hawtio/jmx" "~4.0.0"
-    "@types/angular-mocks" "~1.5.11"
+    "@types/angular-mocks" "~1.7.0"
     "@types/angular-ui-bootstrap" "~0.13.46"
     "@types/jqueryui" "1.12.2"
     dagre-layout "0.8.0"
     ng-infinite-scroll "1.3.0"
 
 "@hawtio/jmx@~4.0.0":
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/@hawtio/jmx/-/jmx-4.0.7.tgz#8c669d21168282f725380d8b1a7f6fec819a7f63"
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/@hawtio/jmx/-/jmx-4.0.10.tgz#e8c18c7671826fc80790261f11bfe137bbda0143"
   dependencies:
     "@hawtio/core" "^4.0.0"
     "@hawtio/forms" "^4.0.0"
@@ -84,9 +84,9 @@
     codemirror "5.33.0"
     js-beautify "1.7.5"
 
-"@types/angular-mocks@~1.5.11":
-  version "1.5.12"
-  resolved "https://registry.yarnpkg.com/@types/angular-mocks/-/angular-mocks-1.5.12.tgz#755af97607efa54730e64b9a6ab41f9d8a908ae1"
+"@types/angular-mocks@~1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@types/angular-mocks/-/angular-mocks-1.7.0.tgz#310d999a3c47c10ecd8eef466b5861df84799429"
   dependencies:
     "@types/angular" "*"
 
@@ -103,8 +103,8 @@
     "@types/angular" "*"
 
 "@types/angular@*":
-  version "1.6.43"
-  resolved "https://registry.yarnpkg.com/@types/angular/-/angular-1.6.43.tgz#6235ef416053a86302970717510a936d889cbb9a"
+  version "1.6.50"
+  resolved "https://registry.yarnpkg.com/@types/angular/-/angular-1.6.50.tgz#8b6599088d80f68ef0cad7d3a2062248ebe72b3d"
 
 "@types/bootstrap@3.3.36":
   version "3.3.36"
@@ -113,8 +113,8 @@
     "@types/jquery" "*"
 
 "@types/c3@^0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@types/c3/-/c3-0.6.0.tgz#74fe73461f18386ae460e8113ea4883ab7fbeab1"
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/@types/c3/-/c3-0.6.2.tgz#b4d5fc5dbe05b900a531544786f8cfedf5b8e416"
   dependencies:
     "@types/d3" "^4"
 
@@ -187,8 +187,8 @@
     "@types/geojson" "*"
 
 "@types/d3-hierarchy@*":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@types/d3-hierarchy/-/d3-hierarchy-1.1.3.tgz#c5364aac0ff4491fc78f73b7c0d546b57b561230"
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@types/d3-hierarchy/-/d3-hierarchy-1.1.4.tgz#b04dfcb1f2074da789ada10fe4942d13f0bce421"
 
 "@types/d3-interpolate@*":
   version "1.2.0"
@@ -205,8 +205,8 @@
   resolved "https://registry.yarnpkg.com/@types/d3-polygon/-/d3-polygon-1.0.6.tgz#db25c630a2afb9191fe51ba61dd37baee9dd44c7"
 
 "@types/d3-quadtree@*":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@types/d3-quadtree/-/d3-quadtree-1.0.5.tgz#1ce1e659eae4530df0cb127f297f1741a367a82e"
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@types/d3-quadtree/-/d3-quadtree-1.0.6.tgz#45da9e603688ba90eedd3d40f6e504764e06e493"
 
 "@types/d3-queue@*":
   version "3.0.6"
@@ -229,12 +229,12 @@
     "@types/d3-time" "*"
 
 "@types/d3-selection@*":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@types/d3-selection/-/d3-selection-1.3.1.tgz#c6227f4e39d429cc429ce3882fd533facc7f014c"
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@types/d3-selection/-/d3-selection-1.3.2.tgz#dd5661a560ba9ce3aba823c424b8d4a1bc7e833f"
 
 "@types/d3-shape@*":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@types/d3-shape/-/d3-shape-1.2.3.tgz#cadc9f93a626db9190f306048a650df4ffa4e500"
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@types/d3-shape/-/d3-shape-1.2.4.tgz#e65585f2254d83ae42c47af2e730dd9b97952996"
   dependencies:
     "@types/d3-path" "*"
 
@@ -310,7 +310,7 @@
   version "2.8.2"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.8.2.tgz#6ae4d8740c0da5d5a627df725b4eed71b8e36668"
 
-"@types/jquery@*", "@types/jquery@~2.0.0", "@types/jquery@~2.0.46":
+"@types/jquery@*", "@types/jquery@2.0.49", "@types/jquery@~2.0.0", "@types/jquery@~2.0.46":
   version "2.0.49"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.49.tgz#95bd7064caebf65bde10429dff491a1aea05b67d"
 
@@ -324,9 +324,9 @@
   version "0.0.30"
   resolved "https://registry.yarnpkg.com/@types/js-beautify/-/js-beautify-0.0.30.tgz#82ffbeb2c2dec592f1d04169e926912eeed567ec"
 
-"@types/lodash@4.14.91":
-  version "4.14.91"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.91.tgz#794611b28056d16b5436059c6d800b39d573cd3a"
+"@types/lodash@^4.0.0":
+  version "4.14.116"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.116.tgz#5ccf215653e3e8c786a58390751033a9adca0eb9"
 
 "@types/marked@0.0.28", "@types/marked@0.3.0":
   version "0.3.0"
@@ -351,8 +351,8 @@ angular-drag-and-drop-lists@2.0.0:
   resolved "https://registry.yarnpkg.com/angular-drag-and-drop-lists/-/angular-drag-and-drop-lists-2.0.0.tgz#a01d44b94cf233c9c2d45a31842cb35a9d0882ca"
 
 angular-patternfly@^4.0.0:
-  version "4.18.4"
-  resolved "https://registry.yarnpkg.com/angular-patternfly/-/angular-patternfly-4.18.4.tgz#91c33ac364bafb09923d307eaf23adecacc0bf8f"
+  version "4.18.5"
+  resolved "https://registry.yarnpkg.com/angular-patternfly/-/angular-patternfly-4.18.5.tgz#9a1fe340b222a3befd2f4f5b814b8ee6a321c5e4"
   dependencies:
     angular "1.5.*"
     angular-animate "1.5.*"
@@ -462,8 +462,8 @@ codemirror@5.33.0:
   resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.33.0.tgz#462ad9a6fe8d38b541a9536a3997e1ef93b40c6a"
 
 commander@^2.9.0:
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.16.0.tgz#f16390593996ceb4f3eeb020b31d78528f7f8a50"
+  version "2.17.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
 
 config-chain@~1.1.5:
   version "1.1.11"
@@ -615,7 +615,7 @@ keycloak-js@3.4.3:
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/keycloak-js/-/keycloak-js-3.4.3.tgz#9fbb1ba7b2433229f5cc8babbd308ff0e945dac7"
 
-lodash@4.17.4, lodash@4.17.5, lodash@4.x, lodash@^4.11.1, lodash@^4.17.4:
+lodash@4.17.5, lodash@4.x, lodash@^4.11.1, lodash@^4.17.4, lodash@~4.17.0:
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
@@ -631,11 +631,11 @@ marked@0.3.9:
 
 minimist@0.0.8:
   version "0.0.8"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
+  resolved "http://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
 mkdirp@~0.5.0:
   version "0.5.1"
-  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
+  resolved "http://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
 
@@ -677,8 +677,8 @@ patternfly-bootstrap-treeview@2.1.5, patternfly-bootstrap-treeview@~2.1.0:
     jquery ">= 2.1.x"
 
 patternfly@^3.37.1:
-  version "3.54.1"
-  resolved "https://registry.yarnpkg.com/patternfly/-/patternfly-3.54.1.tgz#a0f8b52076aa405486e77ecb504460b1ff35fe92"
+  version "3.54.2"
+  resolved "https://registry.yarnpkg.com/patternfly/-/patternfly-3.54.2.tgz#58b4b424462c4b01aaebf41db2da3bcd63bedfbf"
   dependencies:
     bootstrap "~3.3.7"
     font-awesome "^4.7.0"
@@ -720,8 +720,8 @@ select@^1.1.2:
   resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
 
 semver@^5.1.0:
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
+  version "5.5.1"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.1.tgz#7dfdd8814bdb7cabc7be0fb1d734cfb66c940477"
 
 sigmund@^1.0.1:
   version "1.0.1"
