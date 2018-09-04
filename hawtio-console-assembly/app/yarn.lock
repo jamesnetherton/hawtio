@@ -9,8 +9,8 @@
     "@types/jquery" "~2.0.46"
 
 "@hawtio/core@^4.0.0":
-  version "4.0.10"
-  resolved "https://registry.yarnpkg.com/@hawtio/core/-/core-4.0.10.tgz#69d69939876f69322a95fbc9bfe57bb6aef2d4d2"
+  version "4.0.13"
+  resolved "https://registry.yarnpkg.com/@hawtio/core/-/core-4.0.13.tgz#7382c003e433fde0bf5b1c627ce9f9c62234f2dd"
   dependencies:
     "@hawtio/core-dts" "3.0.18"
     "@types/angular" "*"
@@ -39,8 +39,8 @@
     "@hawtio/ui" "^4.0.0"
 
 "@hawtio/integration@~4.0.0":
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/@hawtio/integration/-/integration-4.0.6.tgz#2b670dd2c6a15ffefea3ff839788663ac33b3138"
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/@hawtio/integration/-/integration-4.0.7.tgz#2db349dc32de5646f7b5efedeb51adcf886b412e"
   dependencies:
     "@hawtio/core-dts" "3.1.0"
     "@hawtio/jmx" "~4.0.0"
@@ -51,8 +51,8 @@
     ng-infinite-scroll "1.3.0"
 
 "@hawtio/jmx@~4.0.0":
-  version "4.0.10"
-  resolved "https://registry.yarnpkg.com/@hawtio/jmx/-/jmx-4.0.10.tgz#e8c18c7671826fc80790261f11bfe137bbda0143"
+  version "4.0.12"
+  resolved "https://registry.yarnpkg.com/@hawtio/jmx/-/jmx-4.0.12.tgz#e5e220d9f825d23f985d4af2ac37d85c79d87741"
   dependencies:
     "@hawtio/core" "^4.0.0"
     "@hawtio/forms" "^4.0.0"
@@ -62,8 +62,8 @@
     patternfly-bootstrap-treeview "2.1.5"
 
 "@hawtio/oauth@~4.0.0":
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/@hawtio/oauth/-/oauth-4.0.4.tgz#4218f4775b4e69f03ae311704322a7f72fc1e046"
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/@hawtio/oauth/-/oauth-4.0.5.tgz#b78954d13ae7566e7538b43c3b039f10cf63cb6d"
   dependencies:
     "@hawtio/core" "^4.0.0"
     ng-idle "^1.3.2"
@@ -408,8 +408,8 @@ angularjs-datatables@^0.5.9:
     jquery ">=1.11.0"
 
 bluebird@^3.0.5:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.2.tgz#1be0908e054a751754549c270489c1505d4ab15a"
 
 bootstrap-datepicker@^1.7.1:
   version "1.8.0"

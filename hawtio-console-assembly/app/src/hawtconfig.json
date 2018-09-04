@@ -13,8 +13,8 @@
   },  
   "disabledRoutes": [
     "/camel/source",
-    "/diagnostics/jfr",
-    "/diagnostics/heap",
-    "/diagnostics/flags"
+    "/diagnostics",
+    "/jvm/discover",
+    "/jvm/local"
   ]
 }
