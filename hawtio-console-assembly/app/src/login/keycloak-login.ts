@@ -1,4 +1,3 @@
-/// <reference path="login.globals.ts"/>
 /// <reference path="../../node_modules/keycloak-js/dist/keycloak.d.ts"/>
 
 namespace Login {
@@ -23,6 +22,8 @@ namespace Login {
         let keycloakEnabled = (data === true || data === "true");
         if (keycloakEnabled) {
           loadKeycloakConfig(next);
+        } else {
+          next();
         }
       },
       error: (xhr: JQueryXHR, status: string, error: string) => {
