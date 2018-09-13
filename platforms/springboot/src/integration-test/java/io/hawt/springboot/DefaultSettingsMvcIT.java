@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 public class DefaultSettingsMvcIT extends AbstractMvcIT {
 
     @Test
-    public void testHawtioRootIsUnauthorized() throws Exception {
-        mockMvc.perform(get("/hawtio/")).andExpect(status().isUnauthorized());
+    public void testHawtioLoginRedirect() throws Exception {
+        mockMvc.perform(get("/hawtio/")).andExpect(status().isFound());
     }
 
     @Test
@@ -20,7 +20,7 @@ public class DefaultSettingsMvcIT extends AbstractMvcIT {
     }
 
     @Test
-    public void testHawtioPluginIsUnauthorized() throws Exception {
-        mockMvc.perform(get("/hawtio/plugin")).andExpect(status().isUnauthorized());
+    public void testHawtioPluginLoginRedirect() throws Exception {
+        mockMvc.perform(get("/hawtio/plugin")).andExpect(status().isFound());
     }
 }
