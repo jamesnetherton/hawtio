@@ -23,6 +23,8 @@ public class LogoutServlet extends HttpServlet {
 
     private AuthenticationConfiguration authConfiguration;
 
+    private Redirector redirector = new Redirector();
+
     @Override
     public void init() {
         authConfiguration = AuthenticationConfiguration.getConfiguration(getServletContext());
@@ -40,7 +42,11 @@ public class LogoutServlet extends HttpServlet {
             session.invalidate();
         }
         request.logout();
-        response.sendRedirect(request.getContextPath() + AuthenticationConfiguration.LOGIN_URL);
+
+        redirector.doRedirect(request, response, AuthenticationConfiguration.LOGIN_URL);
     }
 
+    public void setRedirector(Redirector redirector) {
+        this.redirector = redirector;
+    }
 }
