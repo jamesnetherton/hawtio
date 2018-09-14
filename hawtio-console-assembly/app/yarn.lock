@@ -9,8 +9,8 @@
     "@types/jquery" "~2.0.46"
 
 "@hawtio/core@^4.0.0":
-  version "4.0.14"
-  resolved "https://registry.yarnpkg.com/@hawtio/core/-/core-4.0.14.tgz#9e5c8c379ae208a62e9b998aea98b00036b6940e"
+  version "4.0.16"
+  resolved "https://registry.yarnpkg.com/@hawtio/core/-/core-4.0.16.tgz#09a0abcfed6b27310868e759751060f411afa854"
   dependencies:
     "@hawtio/core-dts" "3.2.0"
     "@types/angular" "*"
@@ -39,8 +39,8 @@
     "@hawtio/ui" "^4.0.0"
 
 "@hawtio/integration@~4.0.0":
-  version "4.0.9"
-  resolved "https://registry.yarnpkg.com/@hawtio/integration/-/integration-4.0.9.tgz#8fe2dab4fe3252c3a2071979796b39224d39b09b"
+  version "4.0.10"
+  resolved "https://registry.yarnpkg.com/@hawtio/integration/-/integration-4.0.10.tgz#9e17ca9541629839c2a2d79f75a1b98298d57d9e"
   dependencies:
     "@hawtio/jmx" "~4.0.0"
     "@types/angular-mocks" "~1.7.0"
@@ -50,8 +50,8 @@
     ng-infinite-scroll "1.3.0"
 
 "@hawtio/jmx@~4.0.0":
-  version "4.0.14"
-  resolved "https://registry.yarnpkg.com/@hawtio/jmx/-/jmx-4.0.14.tgz#d9dfb0e0b1ad1fec97bb0a1617e4e031e561df3a"
+  version "4.0.15"
+  resolved "https://registry.yarnpkg.com/@hawtio/jmx/-/jmx-4.0.15.tgz#78c2742dc21d2cc67dff6c25fd68ac7d65f6b9ad"
   dependencies:
     "@hawtio/core" "^4.0.0"
     "@hawtio/forms" "^4.0.0"
@@ -209,16 +209,16 @@
   resolved "https://registry.yarnpkg.com/@types/d3-quadtree/-/d3-quadtree-1.0.6.tgz#45da9e603688ba90eedd3d40f6e504764e06e493"
 
 "@types/d3-queue@*":
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/@types/d3-queue/-/d3-queue-3.0.6.tgz#2f5aa7eca3b153bb49687eaa570c10ab713439d3"
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/@types/d3-queue/-/d3-queue-3.0.7.tgz#94dc7af693281ab78ccdf381a8c1f71ef16659c1"
 
 "@types/d3-random@*":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@types/d3-random/-/d3-random-1.1.1.tgz#38647ce2ff4ce7d0d56974334c1c4092513c8b9f"
 
 "@types/d3-request@*":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@types/d3-request/-/d3-request-1.0.2.tgz#db9db8154f47816584706c6e6f702be66f22f4be"
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@types/d3-request/-/d3-request-1.0.3.tgz#f528d12efdc83dbc3df486746c939fc5519dc79c"
   dependencies:
     "@types/d3-dsv" "*"
 
@@ -257,8 +257,8 @@
     "@types/d3-selection" "*"
 
 "@types/d3-voronoi@*":
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/@types/d3-voronoi/-/d3-voronoi-1.1.7.tgz#c0a145cf04395927e01706ff6c4ff835c97a8ece"
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@types/d3-voronoi/-/d3-voronoi-1.1.8.tgz#a039cb8368bce4efc1a70aebe744d210851cf1a7"
 
 "@types/d3-zoom@*":
   version "1.7.1"
@@ -379,8 +379,8 @@ angular-resizable@1.2.0:
   resolved "https://registry.yarnpkg.com/angular-resizable/-/angular-resizable-1.2.0.tgz#9dd29af008f8b54abfc051bd269a8f0b4fe43f1a"
 
 angular-route@~1.7.0:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/angular-route/-/angular-route-1.7.3.tgz#245c7ea7d18514c1d08201588092db7df210e7c6"
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/angular-route/-/angular-route-1.7.4.tgz#2af79395b7bc0d92d2a394efea255a912255fea9"
 
 angular-sanitize@1.5.*, angular-sanitize@1.7.3, angular-sanitize@~1.7.0:
   version "1.7.3"
@@ -462,12 +462,12 @@ codemirror@5.33.0:
   resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.33.0.tgz#462ad9a6fe8d38b541a9536a3997e1ef93b40c6a"
 
 commander@^2.9.0:
-  version "2.17.1"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.18.0.tgz#2bf063ddee7c7891176981a2cc798e5754bc6970"
 
 config-chain@~1.1.5:
-  version "1.1.11"
-  resolved "https://registry.yarnpkg.com/config-chain/-/config-chain-1.1.11.tgz#aba09747dfbe4c3e70e766a6e41586e1859fc6f2"
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/config-chain/-/config-chain-1.1.12.tgz#0fde8d091200eb5e808caf25fe618c02f48e4efa"
   dependencies:
     ini "^1.3.4"
     proto-list "~1.2.1"
