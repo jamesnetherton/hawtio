@@ -19,7 +19,9 @@
     "bootstrap-select": "1.13.0",
     "angular": "1.7.3",
     "angular-animate": "1.7.3",
-    "angular-sanitize": "1.7.3"
+    "angular-sanitize": "1.7.3",
+    "@hawtio/core": "4.0.18",
+    "@hawtio/ui": "4.0.3"
   },
   "license": "Apache-2.0",
   "repository": {
