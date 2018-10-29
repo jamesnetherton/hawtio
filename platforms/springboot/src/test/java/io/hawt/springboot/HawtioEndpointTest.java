@@ -13,8 +13,7 @@ public class HawtioEndpointTest {
 
     @Before
     public void setUp() {
-        serverPathHelper = mock(ServerPathHelper.class);
-        hawtioEndpoint = new HawtioEndpoint(serverPathHelper);
+        hawtioEndpoint = new HawtioEndpoint(null);
     }
 
     @Test

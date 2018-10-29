@@ -2,27 +2,28 @@ package io.hawt.springboot;
 
 import java.util.List;
 
-import org.springframework.boot.actuate.endpoint.mvc.AbstractNamedMvcEndpoint;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.boot.actuate.endpoint.web.annotation.ControllerEndpoint;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriComponents;
 
 /**
  * Spring Boot endpoint to expose hawtio.
  */
-@ConfigurationProperties(prefix = "endpoints.hawtio", ignoreUnknownFields = false)
-public class HawtioEndpoint extends AbstractNamedMvcEndpoint {
+@ControllerEndpoint(id = "hawtio")
+public class HawtioEndpoint implements WebMvcConfigurer {
 
-    private final ServerPathHelper serverPathHelper;
+    private final EndpointPathResolver endpointPath;
     private List<HawtPlugin> plugins;
 
-    public HawtioEndpoint(final ServerPathHelper serverPathHelper) {
-        super("hawtio", "/hawtio", true);
-        this.serverPathHelper = serverPathHelper;
+    public HawtioEndpoint(final EndpointPathResolver endpointPath) {
+        this.endpointPath = endpointPath;
     }
 
     public void setPlugins(final List<HawtPlugin> plugins) {
@@ -53,19 +54,19 @@ public class HawtioEndpoint extends AbstractNamedMvcEndpoint {
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         registry // @formatter:off
-            .addResourceHandler(serverPathHelper.getResourceHandlerPathFor(getPath(), "/plugins/**"))
+            .addResourceHandler(endpointPath.resolveUrlMapping("hawtio", "/plugins/**"))
             .addResourceLocations(
                 "/app/",
                 "classpath:/hawtio-static/app/");
         registry
-            .addResourceHandler(serverPathHelper.getResourceHandlerPathFor(getPath(), "/**"))
+            .addResourceHandler(endpointPath.resolveUrlMapping("hawtio", "/**"))
             .addResourceLocations(
                 "/",
                 "/app/",
                 "classpath:/hawtio-static/",
                 "classpath:/hawtio-static/app/");
         registry
-            .addResourceHandler("/img/**")
+            .addResourceHandler(endpointPath.resolveUrlMapping("hawtio", "/img/**"))
             .addResourceLocations("classpath:/hawtio-static/img/"); // @formatter:on
     }
 }
