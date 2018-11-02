@@ -46,18 +46,4 @@ public class EndpointPathResolver {
 
         return Strings.webContextPath(endpointPath, mappings);
     }
-
-    public String resolveContextPath() {
-        final Integer serverPort = serverProperties.getPort();
-        final Integer managementServerPort = managementServerProperties.getPort();
-        String contextPath = "";
-
-        if (serverPort == null || managementServerPort == null || serverPort.equals(managementServerProperties.getPort())) {
-            contextPath = serverProperties.getServlet().getContextPath();
-        } else {
-            contextPath = managementServerProperties.getServlet().getContextPath();
-        }
-
-        return Strings.webContextPath(contextPath);
-    }
 }

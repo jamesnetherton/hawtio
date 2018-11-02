@@ -77,4 +77,14 @@ public abstract class HawtioSpringBootTestCommon extends HawtioSpringBootTestSup
             assertHawtioEndpointPaths(context, properties);
         });
     }
+
+    @Test
+    public void testHawtioAngularRoutePath() {
+        TestProperties properties = TestProperties.builder().build();
+        String angularRoutePath = "/jmx/attributes?nid=root-java.lang-MemoryPool-Metaspace";
+        getContextRunner().withPropertyValues(properties.getProperties()).run((context) -> {
+            getTestClient(context).get().uri(properties.getHawtioPath().concat(angularRoutePath)).exchange()
+                .expectStatus().isOk();
+        });
+    }
 }

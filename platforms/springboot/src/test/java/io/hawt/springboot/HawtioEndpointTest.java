@@ -2,6 +2,7 @@ package io.hawt.springboot;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 import org.springframework.mock.web.MockHttpServletRequest;
 
 import static org.junit.Assert.assertEquals;
@@ -9,21 +10,27 @@ import static org.junit.Assert.assertEquals;
 public class HawtioEndpointTest {
 
     private HawtioEndpoint hawtioEndpoint;
+    private EndpointPathResolver endpointPathResolver;
 
     @Before
     public void setUp() {
-        hawtioEndpoint = new HawtioEndpoint(null);
+        endpointPathResolver = Mockito.mock(EndpointPathResolver.class);
+        hawtioEndpoint = new HawtioEndpoint(endpointPathResolver);
     }
 
     @Test
     public void testGetIndexHtmlRedirect() {
+        Mockito.when(endpointPathResolver.resolve("hawtio")).thenReturn("/hawtio");
+
         runTestGetIndexHtmlRedirect(null, null,
-            "forward:/index.html");
+            "forward:/hawtio/index.html");
         runTestGetIndexHtmlRedirect("", "",
-            "forward:/index.html");
+            "forward:/hawtio/index.html");
         runTestGetIndexHtmlRedirect("/hawtio", null,
             "forward:/hawtio/index.html");
         runTestGetIndexHtmlRedirect("/hawtio/", null,
+            "forward:/hawtio/index.html");
+        runTestGetIndexHtmlRedirect("/hawtio/jmx/attributes", "?nid=root-java.nio",
             "forward:/hawtio/index.html");
     }
 
