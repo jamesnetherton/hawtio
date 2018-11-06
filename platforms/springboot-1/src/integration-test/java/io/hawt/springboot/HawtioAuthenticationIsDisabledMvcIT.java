@@ -489,8 +489,9 @@ public abstract class HawtioAuthenticationIsDisabledMvcIT {
                 @Test
                 @Override
                 public void testHawtioJolokiaRequest() throws Exception {
+                    System.out.println("==========> " + hawtioPath + "/jolokia/foo");
                     mockMvc.perform(
-                            getRequest(hawtioPath + "/jolokia/foo/bar?foo=bar"))
+                            getRequest(hawtioPath + "/jolokia/foo"))
                             .andExpect(status().isNotFound())
                             .andExpect(forwardedUrl(null));
                 }

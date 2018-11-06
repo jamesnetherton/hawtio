@@ -1,7 +1,5 @@
 package io.hawt.springboot;
 
-import io.hawt.util.Strings;
-
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +13,6 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
-import org.springframework.web.util.UrlPathHelper;
 
 /**
  * Spring Boot endpoint to expose hawtio.
@@ -23,21 +20,20 @@ import org.springframework.web.util.UrlPathHelper;
 @ConfigurationProperties(prefix = "endpoints.hawtio", ignoreUnknownFields = false)
 public class HawtioEndpoint extends AbstractNamedMvcEndpoint {
 
-    private final String managementContextPrefix;
+    private final EndpointPathResolver resolver;
 
     private List<HawtPlugin> plugins;
 
-    public HawtioEndpoint(final String managementContextPrefix) {
+    public HawtioEndpoint(EndpointPathResolver resolver) {
         super("hawtio", "/hawtio", true);
-        this.managementContextPrefix = Strings
-                .webContextPath(managementContextPrefix);
+        this.resolver = resolver;
     }
 
     public void setPlugins(final List<HawtPlugin> plugins) {
         this.plugins = plugins;
     }
 
-    @RequestMapping(value = {"", "/", "{path:**/^(?:(?!\\bjolokia\\b|\\.).)*$}"}, produces = MediaType.TEXT_HTML_VALUE)
+    @RequestMapping(value = {"", "/", "**/{path:^(?:(?!\\bjolokia\\b|\\.).)*$}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String redirectToIndexPage(final HttpServletRequest request) {
         return getIndexHtmlRedirect(request);
     }
@@ -51,12 +47,12 @@ public class HawtioEndpoint extends AbstractNamedMvcEndpoint {
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry registry) {
         registry // @formatter:off
-            .addResourceHandler(managementContextPrefix + getPath() + "/plugins/**")
+            .addResourceHandler(resolver.resolveUrlMapping(getPath(), "/plugins/**"))
             .addResourceLocations(
                 "/app/",
                 "classpath:/hawtio-static/app/");
         registry
-            .addResourceHandler(managementContextPrefix + getPath() + "/**")
+            .addResourceHandler(resolver.resolveUrlMapping(getPath(), "/**"))
             .addResourceLocations(
                 "/",
                 "/app/",
@@ -68,14 +64,10 @@ public class HawtioEndpoint extends AbstractNamedMvcEndpoint {
     }
 
     protected String getIndexHtmlRedirect(final HttpServletRequest request) {
-        UriComponentsBuilder builder = ServletUriComponentsBuilder.fromRequest(request);
-        if (request.getServletContext().getContextPath() != null) {
-            String path = new UrlPathHelper().getPathWithinApplication(request);
-            builder.replacePath(path);
-        }
-
-        // append "/index.html" to the current path
+        UriComponentsBuilder builder = ServletUriComponentsBuilder.newInstance();
+        builder.path(resolver.resolve(getPath()));
         builder.path("/index.html");
+        builder.query(request.getQueryString());
         UriComponents uriComponents = builder.build();
         String path = uriComponents.getPath();
         return "forward:" + path;

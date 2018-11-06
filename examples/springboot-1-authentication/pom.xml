@@ -82,6 +82,9 @@
         <version>${spring-boot1-version}</version>
         <configuration>
           <mainClass>io.hawt.example.spring.boot.SampleAuthenticationSpringBootService</mainClass>
+          <jvmArguments>
+            -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
+          </jvmArguments>
         </configuration>
         <executions>
           <execution>
