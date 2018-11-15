@@ -24,16 +24,9 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${spring-boot-version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>io.hawt</groupId>
-        <artifactId>hawtio-bom</artifactId>
-        <version>${project.version}</version>
+        <groupId>org.jboss.redhat-fuse</groupId>
+        <artifactId>fuse-springboot-bom</artifactId>
+        <version>7.2.0.fuse-720016-redhat-00003</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -101,4 +94,17 @@
     </plugins>
   </build>
 
+  <repositories>
+    <repository>
+      <id>indy</id>
+      <url>http://indy.cloud.pnc.engineering.redhat.com/api/group/builds-untested+shared-imports+public</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>indy</id>
+      <url>http://indy.cloud.pnc.engineering.redhat.com/api/group/builds-untested+shared-imports+public</url>
+    </pluginRepository>
+  </pluginRepositories>
 </project>
