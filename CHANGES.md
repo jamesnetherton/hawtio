@@ -1,5 +1,42 @@
 ## Change Log
 
+#### 2.4.0 (To be released)
+
+* Support Java 11
+* Upgrade @hawtio/integration, @hawtio/jmx to 4.2.x
+
+#### 2.3.0
+
+* Add support for Spring Boot 2  
+  **Note:** Spring Boot 2 is now the default Spring Boot version for Hawtio dependency `hawtio-spring-boot`.  
+  If Spring Boot 1 is required, use dependency `hawtio-spring-boot-1`.
+* Bug fixes
+
+#### 2.2.0
+
+* Upgrade Hawtio components to 4.1.x
+* Minor improvements
+* Bug fixes
+
+#### 2.1.0
+
+* Upgrade Hawtio components to 4.0.x
+* Upgrade AngularJS to 1.7.x
+* Improve security-releated HTTP headers handling
+* Bug fixes
+
+#### 2.0.3
+
+- #2488: Allow using SSL by specifying a keyStore and keyStorePass from embedded Hawtio
+
+#### 2.0.2
+
+* **Official Hawtio v2 GA version!**
+
+#### 2.0.0, 2.0.1
+
+* These are old versions that were mistakenly released years ago. Please don't use these versions!
+
 #### 2.0 Beta3 (To be released)
 
 * Added hawtio BOM
