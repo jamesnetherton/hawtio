@@ -25,7 +25,7 @@
     <bundle>mvn:io.hawt/hawtio-log-osgi/${project.version}</bundle>
     <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-core/${jackson-version}</bundle>
     <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-annotations/${jackson-version}</bundle>
-    <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-databind/${jackson-version}</bundle>
+    <bundle dependency="true">mvn:com.fasterxml.jackson.core/jackson-databind/${jackson-databind-version}</bundle>
   </feature>
 
   <feature name="hawtio" version="${project.version}">
