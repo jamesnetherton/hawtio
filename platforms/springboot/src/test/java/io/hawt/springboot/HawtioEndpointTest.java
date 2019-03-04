@@ -2,23 +2,24 @@ package io.hawt.springboot;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 public class HawtioEndpointTest {
 
-    private ServerPathHelper serverPathHelper;
+    private EndpointPathResolver resolver;
     private HawtioEndpoint hawtioEndpoint;
 
     @Before
     public void setUp() {
-        hawtioEndpoint = new HawtioEndpoint(null);
+        resolver = Mockito.mock(EndpointPathResolver.class);
+        hawtioEndpoint = new HawtioEndpoint(resolver);
     }
 
     @Test
-    public void testGetIndexHtmlRedirect() {
-        when(serverPathHelper.getPathFor("/hawtio")).thenReturn("/hawtio");
-        assertEquals("forward:/hawtio/index.html", hawtioEndpoint.forwardHawtioRequestToIndexHtml());
+    public void testForwardHawtioRequestToIndexHtml() {
+        Mockito.when(resolver.resolve("hawtio")).thenReturn("/actuator/hawtio");
+        String result = hawtioEndpoint.forwardHawtioRequestToIndexHtml();
+        assertEquals("forward:/actuator/hawtio/index.html", result);
     }
 }

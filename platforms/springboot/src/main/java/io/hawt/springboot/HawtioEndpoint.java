@@ -2,8 +2,6 @@ package io.hawt.springboot;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.boot.actuate.endpoint.web.annotation.ControllerEndpoint;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,7 +37,8 @@ public class HawtioEndpoint implements WebMvcConfigurer {
      */
     @RequestMapping(value = {"", "{path:^(?:(?!\\bjolokia\\b|auth|css|fonts|img|js|oauth|\\.).)*$}/**"}, produces = MediaType.TEXT_HTML_VALUE)
     public String forwardHawtioRequestToIndexHtml() {
-        UriComponents uriComponents = ServletUriComponentsBuilder.fromPath(serverPathHelper.getPathFor(getPath()))
+        final String path = endpointPath.resolve("hawtio");
+        final UriComponents uriComponents = ServletUriComponentsBuilder.fromPath(path)
             .path("/index.html")
             .build();
         return "forward:" + uriComponents.getPath();
