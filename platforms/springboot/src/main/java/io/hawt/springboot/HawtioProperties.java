@@ -1,6 +1,5 @@
 package io.hawt.springboot;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
@@ -9,7 +8,7 @@ import java.util.Objects;
  */
 public class HawtioProperties {
 
-    private Map<String, String> properties = new HashMap<>();
+    private final Map<String, String> properties;
 
     public HawtioProperties(final Map<String, String> properties) {
         this.properties = Objects.requireNonNull(properties);
