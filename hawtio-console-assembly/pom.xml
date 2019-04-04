@@ -77,7 +77,6 @@
                         </goals>
                         <configuration>
                           <nodeVersion>v8.11.3</nodeVersion>
-                          <npmVersion>5.6.0</npmVersion>
                         </configuration>
                       </execution>
                       <execution>
