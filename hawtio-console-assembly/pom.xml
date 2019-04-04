@@ -212,6 +212,25 @@
                         <arguments>config set strict-ssl false</arguments>
                       </configuration>
                     </execution>
+                    <!-- Install npm/yarn dependencies -->
+                    <execution>
+                      <id>yarn install</id>
+                      <goals>
+                        <goal>yarn</goal>
+                      </goals>
+                      <configuration>
+                        <arguments>install</arguments>
+                      </configuration>
+                    </execution>
+                    <execution>
+                      <id>yarn run build</id>
+                      <goals>
+                        <goal>yarn</goal>
+                      </goals>
+                      <configuration>
+                        <arguments>run build</arguments>
+                      </configuration>
+                    </execution>
                   </executions>
                 </plugin>
                 <!-- End Prod fixes -->
