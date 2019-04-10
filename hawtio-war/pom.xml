@@ -114,7 +114,6 @@
     <finalName>${finalName}</finalName>
 
     <plugins>
-
       <!-- Add hawtio-console resources to the WAR -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

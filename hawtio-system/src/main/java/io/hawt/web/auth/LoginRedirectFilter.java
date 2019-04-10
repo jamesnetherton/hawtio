@@ -1,7 +1,10 @@
 package io.hawt.web.auth;
 
 import java.io.IOException;
-import java.util.Arrays;
+import java.io.InputStream;
+import java.util.Collections;
+import java.util.List;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -12,28 +15,49 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import static java.util.stream.Collectors.collectingAndThen;
+import static java.util.stream.Collectors.toList;
+
 /**
  * Redirect to login page when authentication is enabled.
  */
 public class LoginRedirectFilter implements Filter {
 
+    public static final String PARAM_PATH_PREFIX = "pathPrefix";
+
+    private static final Logger LOG = LoggerFactory.getLogger(LoginRedirectFilter.class);
+
     private AuthenticationConfiguration authConfiguration;
 
-    private final String[] unsecuredPaths;
+    private List<String> unsecuredPaths = Collections.emptyList();
 
     private Redirector redirector = new Redirector();
-
-    public LoginRedirectFilter() {
-        this(AuthenticationConfiguration.UNSECURED_PATHS);
-    }
-
-    public LoginRedirectFilter(String[] unsecuredPaths) {
-        this.unsecuredPaths = unsecuredPaths;
-    }
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         authConfiguration = AuthenticationConfiguration.getConfiguration(filterConfig.getServletContext());
+
+        InputStream resource = loadResource("/resourceList.txt");
+        if (resource != null) {
+            try {
+                unsecuredPaths = Collections.unmodifiableList(IOUtils.readLines(resource));
+
+                String pathPrefix = filterConfig.getInitParameter(PARAM_PATH_PREFIX);
+                if (pathPrefix != null) {
+                    unsecuredPaths = unsecuredPaths.stream()
+                        .map(path -> pathPrefix + path)
+                        .collect(collectingAndThen(toList(), Collections::unmodifiableList));
+                }
+            } catch (IOException e) {
+                LOG.error("Failed reading resourceList.txt. Authentication may not work correctly.", e);
+            }
+        } else {
+            LOG.error("Failed loading resourceList.txt. Authentication may not work correctly.");
+        }
     }
 
     @Override
@@ -51,12 +75,8 @@ public class LoginRedirectFilter implements Filter {
         }
     }
 
-    private boolean isAuthenticated(HttpSession session) {
-        return session != null && session.getAttribute("subject") != null;
-    }
-
     boolean isSecuredPath(String path) {
-        return !Arrays.stream(unsecuredPaths).anyMatch(path::startsWith);
+        return !unsecuredPaths.contains(path);
     }
 
     @Override
@@ -65,5 +85,27 @@ public class LoginRedirectFilter implements Filter {
 
     public void setRedirector(Redirector redirector) {
         this.redirector = redirector;
+    }
+
+    private boolean isAuthenticated(HttpSession session) {
+        return session != null && session.getAttribute("subject") != null;
+    }
+
+    private InputStream loadResource(String resource) {
+        InputStream in = null;
+        ClassLoader tccl = Thread.currentThread().getContextClassLoader();
+        if (tccl != null) {
+            in = tccl.getResourceAsStream(resource);
+        }
+
+        if (in == null) {
+            in = LoginRedirectFilter.class.getClassLoader().getResourceAsStream(resource);
+        }
+
+        if (in == null) {
+            in = LoginRedirectFilter.class.getResourceAsStream(resource);
+        }
+
+        return in;
     }
 }

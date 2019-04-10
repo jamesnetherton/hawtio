@@ -1,0 +1,3 @@
+/auth/login
+/auth/logout
+/img/test.jpg

@@ -28,6 +28,15 @@
       <version>${project.version}</version>
     </dependency>
 
+    <!-- hawtio-console-assembly is needed to ensure build order -->
+    <dependency>
+      <groupId>io.hawt</groupId>
+      <artifactId>hawtio-console-assembly</artifactId>
+      <version>${project.version}</version>
+      <scope>provided</scope>
+      <type>pom</type>
+    </dependency>
+
     <dependency>
       <groupId>org.jolokia</groupId>
       <artifactId>jolokia-core</artifactId>
@@ -114,4 +123,41 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.gmaven</groupId>
+        <artifactId>groovy-maven-plugin</artifactId>
+        <version>${groovy-maven-plugin-version}</version>
+        <executions>
+          <execution>
+            <id>generate-resource-list</id>
+            <goals>
+              <goal>execute</goal>
+            </goals>
+            <phase>prepare-package</phase>
+            <configuration>
+              <source>${project.basedir}/scripts/generate-resource-list.groovy</source>
+              <properties>
+                <insecurePaths>
+                  /auth/login,
+                  /auth/logout,
+                  /jolokia,
+                  /jolokia/,
+                  /keycloak/enabled,
+                  /keycloak/client-config,
+                  /keycloak/validate-subject-matches,
+                  /oauth/config.js,
+                  /user
+                </insecurePaths>
+                <distDir>${project.basedir}/../hawtio-console-assembly/dist</distDir>
+                <outputFile>${project.build.outputDirectory}/resourceList.txt</outputFile>
+              </properties>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>

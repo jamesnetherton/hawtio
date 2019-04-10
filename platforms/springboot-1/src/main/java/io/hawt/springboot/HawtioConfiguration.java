@@ -1,6 +1,5 @@
 package io.hawt.springboot;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import io.hawt.system.ConfigManager;
 import io.hawt.util.Strings;
-import io.hawt.web.auth.AuthenticationConfiguration;
 import io.hawt.web.auth.AuthenticationFilter;
 import io.hawt.web.auth.LoginRedirectFilter;
 import io.hawt.web.auth.LoginServlet;
@@ -44,6 +42,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.Ordered;
 import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 import org.springframework.web.servlet.mvc.AbstractUrlViewController;
+import static io.hawt.web.auth.LoginRedirectFilter.PARAM_PATH_PREFIX;
 import static io.hawt.web.filters.BaseTagHrefFilter.PARAM_APPLICATION_CONTEXT_PATH;
 
 /**
@@ -197,12 +196,12 @@ public class HawtioConfiguration {
 
     @Bean
     public FilterRegistrationBean loginRedirectFilter(Redirector redirector) {
-        final String[] unsecuredPaths = prependContextPath(AuthenticationConfiguration.UNSECURED_PATHS);
         final FilterRegistrationBean filter = new FilterRegistrationBean();
-        final LoginRedirectFilter loginRedirectFilter = new LoginRedirectFilter(unsecuredPaths);
+        final LoginRedirectFilter loginRedirectFilter = new LoginRedirectFilter();
         loginRedirectFilter.setRedirector(redirector);
         filter.setFilter(loginRedirectFilter);
         filter.addUrlPatterns(hawtioPath + "/*");
+        filter.addInitParameter(PARAM_PATH_PREFIX, hawtioPath);
         return filter;
     }
 
@@ -277,12 +276,6 @@ public class HawtioConfiguration {
     // -------------------------------------------------------------------------
     // Utilities
     // -------------------------------------------------------------------------
-
-    private String[] prependContextPath(String[] paths) {
-        return Arrays.stream(paths)
-            .map(path -> hawtioPath + path)
-            .toArray(String[]::new);
-    }
 
     private class JolokiaForwardingController extends AbstractUrlViewController {
 

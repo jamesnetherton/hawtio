@@ -1,7 +1,6 @@
 package io.hawt.springboot;
 
 import io.hawt.system.ConfigManager;
-import io.hawt.web.auth.AuthenticationConfiguration;
 import io.hawt.web.auth.AuthenticationFilter;
 import io.hawt.web.auth.LoginRedirectFilter;
 import io.hawt.web.auth.LoginServlet;
@@ -21,7 +20,6 @@ import io.hawt.web.filters.XFrameOptionsFilter;
 import io.hawt.web.filters.XXSSProtectionFilter;
 import io.hawt.web.proxy.ProxyServlet;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -44,6 +42,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.Ordered;
 import org.springframework.web.servlet.handler.SimpleUrlHandlerMapping;
 import org.springframework.web.servlet.mvc.AbstractUrlViewController;
+import static io.hawt.web.auth.LoginRedirectFilter.PARAM_PATH_PREFIX;
 import static io.hawt.web.filters.BaseTagHrefFilter.PARAM_APPLICATION_CONTEXT_PATH;
 
 @ManagementContextConfiguration
@@ -190,12 +189,12 @@ public class HawtioManagementConfiguration {
 
     @Bean
     public FilterRegistrationBean loginRedirectFilter(final Redirector redirector) {
-        final String[] unsecuredPaths = prependContextPath(AuthenticationConfiguration.UNSECURED_PATHS);
         final FilterRegistrationBean<LoginRedirectFilter> filter = new FilterRegistrationBean<>();
-        final LoginRedirectFilter loginRedirectFilter = new LoginRedirectFilter(unsecuredPaths);
+        final LoginRedirectFilter loginRedirectFilter = new LoginRedirectFilter();
         loginRedirectFilter.setRedirector(redirector);
         filter.setFilter(loginRedirectFilter);
         filter.addUrlPatterns(hawtioPath + "/*");
+        filter.addInitParameter(PARAM_PATH_PREFIX, hawtioPath);
         return filter;
     }
 
@@ -268,12 +267,6 @@ public class HawtioManagementConfiguration {
     // -------------------------------------------------------------------------
     // Utilities
     // -------------------------------------------------------------------------
-
-    private String[] prependContextPath(String[] paths) {
-        return Arrays.stream(paths)
-            .map(path -> hawtioPath + path)
-            .toArray(String[]::new);
-    }
 
     private class JolokiaForwardingController extends AbstractUrlViewController {
 
