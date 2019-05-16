@@ -56,7 +56,16 @@
 
     <blueprint-web-version>1.1.0</blueprint-web-version>
     <build-helper-maven-plugin-version>1.12</build-helper-maven-plugin-version>
-    <camel-version>2.21.0.fuse-740006</camel-version>
+
+    <camel-version>2.23.2.fuse-740001</camel-version>
+    <spring-version>5.1.6.RELEASE</spring-version>
+    <spring-boot-version>2.1.4.RELEASE</spring-boot-version>
+
+    <!-- Camel 2.21.x version for Spring Boot 1.5.x-->
+    <camel-2.21-version>2.21.0.fuse-740011</camel-2.21-version>
+    <spring4-version>4.3.17.RELEASE</spring4-version>
+    <spring-boot1-version>1.5.16.RELEASE</spring-boot1-version>
+
     <commons-codec-version>1.10</commons-codec-version>
     <commons-httpclient-version>3.1</commons-httpclient-version>
     <commons-io-version>2.2</commons-io-version>
@@ -73,7 +82,7 @@
     <jetty-plugin-version>${jetty-version}</jetty-plugin-version>
     <jolokia-version>1.5.0.redhat-1</jolokia-version>
     <junit-version>4.12</junit-version>
-    <karaf-version>4.2.0.fuse-740002</karaf-version>
+    <karaf-version>4.2.0.fuse-740005</karaf-version>
     <karaf-version-range>[4.0,5)</karaf-version-range>
     <keycloak-version>3.4.1.Final</keycloak-version>
     <log4j-version>1.2.17</log4j-version>
@@ -87,10 +96,12 @@
     <!-- use slf4j-api 1.6.x to be easy compatible with older Karaf/Camel releases -->
     <slf4j-api-version>1.6.6</slf4j-api-version>
     <slf4j-version>1.7.22.redhat-2</slf4j-version>
-    <spring-version>4.3.17.RELEASE</spring-version>
-    <spring-boot-version>1.5.16.RELEASE</spring-boot-version>
     <wildfly-version>11.0.0.Final</wildfly-version>
     <wildfly-maven-plugin-version>1.2.1.Final</wildfly-maven-plugin-version>
+    <jaxb-version>2.3.2</jaxb-version>
+    <activation-version>1.2.0</activation-version>
+    <spring-hateoas-version>0.25.0.RELEASE</spring-hateoas-version>
+    <spring-plugin-core-version>1.2.0.RELEASE</spring-plugin-core-version>
   </properties>
 
   <repositories>
@@ -179,6 +190,8 @@
     <module>bom</module>
     <module>examples/springboot-authentication</module>
     <module>examples/springboot</module>
+    <module>examples/springboot-1-authentication</module>
+    <module>examples/springboot-1</module>
     <module>hawtio-app</module>
     <module>hawtio-base</module>
     <module>hawtio-console-assembly</module>
@@ -195,6 +208,7 @@
     <module>platforms/hawtio-osgi-jmx</module>
     <module>platforms/karaf</module>
     <module>platforms/springboot</module>
+    <module>platforms/springboot-1</module>
     <module>platforms/wildfly</module>
     <module>tooling/hawtio-junit</module>
     <module>tooling/hawtio-maven-plugin</module>
