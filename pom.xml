@@ -188,10 +188,6 @@
 
   <modules>
     <module>bom</module>
-    <module>examples/springboot-authentication</module>
-    <module>examples/springboot</module>
-    <module>examples/springboot-1-authentication</module>
-    <module>examples/springboot-1</module>
     <module>hawtio-app</module>
     <module>hawtio-base</module>
     <module>hawtio-console-assembly</module>
@@ -207,8 +203,6 @@
     <module>hawtio-war</module>
     <module>platforms/hawtio-osgi-jmx</module>
     <module>platforms/karaf</module>
-    <module>platforms/springboot</module>
-    <module>platforms/springboot-1</module>
     <module>platforms/wildfly</module>
     <module>tooling/hawtio-junit</module>
     <module>tooling/hawtio-maven-plugin</module>
@@ -308,7 +302,34 @@
           </excludes>
         </configuration>
       </plugin>
-
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <doclint>none</doclint>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
     <pluginManagement>
       <plugins>
@@ -336,88 +357,35 @@
   </build>
 
   <profiles>
-    <!-- dealing with tools.jar for hawtio-local-jvm-mbean -->
     <profile>
       <id>default-profile</id>
       <activation>
         <activeByDefault>true</activeByDefault>
-        <file>
-          <exists>${java.home}/../lib/tools.jar</exists>
-        </file>
       </activation>
-      <properties>
-        <toolsjar>${java.home}/../lib/tools.jar</toolsjar>
-      </properties>
+      <modules>
+        <module>examples/springboot</module>
+        <module>examples/springboot-authentication</module>
+        <module>examples/springboot-1</module>
+        <module>examples/springboot-1-authentication</module>
+        <module>platforms/springboot</module>
+        <module>platforms/springboot-1</module>
+      </modules>
     </profile>
-
     <profile>
-      <id>release</id>
-      <properties>
-      </properties>
-      <!--
-      TODO when using the release profile you should add your ~/.m2/settings.xml something like this:
-
-      <settings>
-        <profiles>
-          <profile>
-            <id>release</id>
-            <properties>
-              <gpg.passphrase>MyPassPhrase</gpg.passphrase>
-            </properties>
-          </profile>
-          ...
-      -->
-
-      <!--
-        Run the release /w the -P release flag to enable the release profile.
-      -->
-      <build>
-        <plugins>
-          <!-- We want to sign the artifact, the POM, and all attached artifacts -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <configuration>
-              <passphrase>${gpg.passphrase}</passphrase>
-            </configuration>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-sources</id>
-                <goals>
-                  <goal>jar-no-fork</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <configuration>
-              <encoding>${project.build.sourceEncoding}</encoding>
-              <doclint>none</doclint>
-            </configuration>
-            <executions>
-              <execution>
-                <id>attach-javadocs</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
+      <id>spring-boot-1</id>
+      <modules>
+        <module>examples/springboot-1-authentication</module>
+        <module>examples/springboot-1</module>
+        <module>platforms/springboot-1</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>spring-boot-2</id>
+      <modules>
+        <module>examples/springboot-authentication</module>
+        <module>examples/springboot</module>
+        <module>platforms/springboot</module>
+      </modules>
     </profile>
   </profiles>
 
