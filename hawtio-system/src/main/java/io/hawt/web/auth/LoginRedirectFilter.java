@@ -25,9 +25,9 @@ public class LoginRedirectFilter implements Filter {
 
     private AuthenticationConfiguration authConfiguration;
 
-    private final String[] unsecuredPaths;
+    private String[] unsecuredPaths;
 
-    private Redirector redirector = new Redirector();
+    private Redirector redirector;
 
     public LoginRedirectFilter() {
         this(AuthenticationConfiguration.UNSECURED_PATHS);
@@ -40,6 +40,11 @@ public class LoginRedirectFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         authConfiguration = AuthenticationConfiguration.getConfiguration(filterConfig.getServletContext());
+
+        Object unsecured = filterConfig.getServletContext().getAttribute("unsecuredPaths");
+        if (unsecured != null) {
+            unsecuredPaths = (String[]) unsecured;
+        }
     }
 
     @Override

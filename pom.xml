@@ -60,6 +60,8 @@
     <spring-version>5.2.6.RELEASE</spring-version>
     <spring-boot-version>2.3.0.RELEASE</spring-boot-version>
 
+    <quarkus-version>1.7.0.Final</quarkus-version>
+
     <commons-codec-version>1.10</commons-codec-version>
     <commons-httpclient-version>3.1</commons-httpclient-version>
     <commons-io-version>2.2</commons-io-version>
@@ -109,6 +111,7 @@
     <module>examples/springboot-keycloak</module>
     <module>examples/springboot-security</module>
     <module>examples/springboot</module>
+    <module>examples/quarkus</module>
     <module>hawtio-app</module>
     <module>hawtio-base</module>
     <module>hawtio-console-assembly</module>
@@ -125,6 +128,7 @@
     <module>hawtio-war</module>
     <module>platforms/hawtio-osgi-jmx</module>
     <module>platforms/karaf</module>
+    <module>platforms/quarkus</module>
     <module>platforms/springboot</module>
     <module>platforms/springboot-keycloak</module>
     <module>platforms/wildfly</module>
